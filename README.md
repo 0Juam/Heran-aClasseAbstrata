@@ -1,0 +1,1 @@
+# Heran-aClasseAbstrata

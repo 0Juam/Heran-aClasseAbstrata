@@ -9,7 +9,7 @@ abstract class Bebida{
     }
     public function setNome($nome)
     {
-        this->nome = $nome;
+        $this->nome = $nome;
     }
     public function getPreco()
     {
@@ -17,7 +17,7 @@ abstract class Bebida{
     }
     public function setPreco($preco)
     {
-        this->nome = $preco;
+        $this->nome = $preco;
     }
     abstract function mostrarBebida();
     abstract function verificaPreco($preco);

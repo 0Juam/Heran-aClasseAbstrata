@@ -1,7 +1,7 @@
 <?php
  require_once 'Bebida.php';
 class Suco extends Bebida{
-    private $sabor;
+    private $sabor; 
 
     public function __construct($nome,$preco,$sabor)
     {
@@ -17,14 +17,15 @@ class Suco extends Bebida{
     {
         $this->sabor = $sabor;
     }
-    public function mostraBebida()
+    public function mostrarBebida()
     {
-      return 'Nome: '. $this->nome . '</br> Preço: '. $this->preco .'</br>Sabor: '. $this->sabor;
+        $mostraSuco = "Nome: {$this->getNome()} </br> Preço: R$ {$this->getPreco()} </br> Sabor: {$this->sabor}";
+        return $mostraSuco;
     }
     public function verificaPreco($preco)
     {
       $valida = "Caro!";
-      if($preco < 2.5){
+      if($preco < 2.50){
           $valida = "Dentro do orçamento!";
       }
       return $valida;

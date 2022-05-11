@@ -26,9 +26,7 @@
     </select>
     <br><br>
     <center>
-        <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br><br><br>
-        <br><br><br><br><br><br>
+        <br><br>
     <button class="botao" type="submit" name="enviar">Enviar</button>
 </br></br></br></br>
     <center>

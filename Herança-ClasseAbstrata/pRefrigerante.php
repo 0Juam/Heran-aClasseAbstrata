@@ -3,13 +3,13 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>Vinho</title>
+    <title>Refrigerante</title>
 </head>
 <body style="background-image: url('img/refri.jpg');" >
     <div id="tela" style=" background: red;opacity:0.8;">
@@ -27,14 +27,13 @@ session_start();
     <label>Preço: </label> <br>
     <input type="text" name="preco" id="preco" required placeholder="Digite o Preço do produto:">
     <br><br>
-    <label>Sabor: </label> <br>
+    <label>Retornavel: </label> <br>
     <input type="text" name="retornavel" id="retornavel" required placeholder="O produto é retornavel:">
     <br><br>
     <center>
         <br><br>
     <button class="botao" type="submit" name="enviar">Cadastrar</button>
     </br></br>
-    <button class="botao" type="submit" name="voltar">Voltar</button>
  </br></br></br></br>
     <center>
     <?php
@@ -43,18 +42,19 @@ session_start();
 
         if(isset($_POST["enviar"]))
         {
-            $suco = new Suco();
-            $suco = setNome($_POST['nome']);
-            $suco = setPreco($_POST['preco']);
-            $suco = setRetornavel($_POST['sabor']);
-            $preco = $_POST["preco"];
+            $refrigerante = new Refrigerante($_POST['nome'],$_POST['preco'],$_POST['retornavel']);
 
             echo $refrigerante->mostrarBebida();
             echo "<br / >";
+            $preco = $_POST['preco'];
             echo $refrigerante->verificaPreco($preco);
         }
         
     ?>
+    </br></br>
+    <a  href="index.php">
+     <img src="img/retornar.png" style="heigh:60px; width:60px; center;" alt="voltar">
+    </a>
     </center>
     <br><br>
 <br>

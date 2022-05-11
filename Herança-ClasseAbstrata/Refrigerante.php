@@ -1,25 +1,26 @@
 <?php
  require_once 'Bebida.php';
-class Suco extends Bebida{
-    private $retornavel;
+class Refrigerante extends Bebida{
+    private $retornavel; 
 
     public function __construct($nome,$preco,$retornavel)
     {
         parent::__construct($nome,$preco);
-        $this->safra = $retornavel;
+        $this->retornavel = $retornavel;
     }
-
-    public function getSabor()
+ 
+    public function getRetornavel()
     {
-        return $this->sabor;
+        return $this->retornavel;
     }
-    public function setSafra($sabor)
+    public function setRetornavel($retornavel)
     {
-        $this->sabor = $sabor;
+        $this->retornavel = $retornavel;
     }
-    public function mostraBebida()
+    public function mostrarBebida()
     {
-      return 'Nome: '. $this->nome . '</br> Preço: '. $this->preco .'</br>Retornaval: '. $this->retornavel;
+        $mostra = "Nome: {$this->getNome()} </br> Preço: R$ {$this->getPreco()} </br> Retorável: {$this->retornavel}";
+        return $mostra;
     }
     public function verificaPreco($preco)
     {

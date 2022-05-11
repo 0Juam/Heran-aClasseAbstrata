@@ -1,7 +1,7 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -36,9 +36,7 @@ session_start();
     <center>
         <br><br>
     <button class="botao" type="submit" name="enviar">Cadastrar</button>
-    </br></br>
-    <button class="botao" type="submit" name="voltar">Voltar</button>
- </br></br></br></br>
+ </br></br>
     <center>
     <?php
         require_once 'Bebida.php';
@@ -46,19 +44,19 @@ session_start();
 
         if(isset($_POST["enviar"]))
         {
-            $vinho = new Vinho();
-            $vinho = setNome($_POST['nome']);
-            $vinho = setPreco($_POST['preco']);
-            $vinho = setSafra($_POST['safra']);
-            $vinho = setTipo($_POST['tipo']);
-            $vinho = $_POST["preco"];
+            $vinho = new Vinho($_POST['nome'],$_POST['preco'],$_POST['safra'],$_POST['tipo']);
 
             echo $vinho->mostrarBebida();
             echo "<br / >";
+            $preco = $_POST['preco'];
             echo $vinho->verificaPreco($preco);
         }
         
     ?>
+    </br></br>
+    <a  href="index.php">
+     <img src="img/retornar.png" style="heigh:60px; width:60px; center;" alt="voltar">
+    </a>
     </center>
     <br><br>
 <br>

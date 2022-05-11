@@ -1,7 +1,13 @@
 <?php
 abstract class Bebida{
     private $nome;
-    private $preco;
+    private $preco; 
+
+    public function __construct($nome, $preco)
+    {
+        $this->nome = $nome;
+        $this->preco = $preco;
+    }
 
     public function getNome()
     {

@@ -2,7 +2,7 @@
  require_once 'Bebida.php';
 class Vinho extends Bebida{
     private $safra;
-    private $tipo;
+    private $tipo; 
 
     public function __construct($nome,$preco,$safra,$tipo)
     {
@@ -27,7 +27,7 @@ class Vinho extends Bebida{
     {
         $this->tipo = $tipo;
     }
-    public function mostraBebida()
+    public function mostrarBebida()
     {
      $mostra = "Nome: {$this->getNome()} </br> Preço: R$ {$this->getPreco()} </br> Safra: {$this->safra} </br> Tipo: {$this->tipo}";
      return $mostra;
